@@ -1,25 +1,23 @@
-import logo from '../../assets/logo.svg';
-import './App.css';
+import './App.css'
+import movieData from '../../movieData'
+import { useState } from 'react'
+import MoviesContainer from '../MoviesContainer/MoviesContainer'
 
 function App() {
+
+  const [allMovies, setAllMovies] = useState(movieData)
+  const [serverError, setServerError] = useState({hasError: false, message:''})
+
+  const resetError = () => {
+    setServerError({hasError: false, message: ''})
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MoviesContainer allMovies={allMovies.movies} />
     </div>
   );
 }
 
-export default App;
+export default App
