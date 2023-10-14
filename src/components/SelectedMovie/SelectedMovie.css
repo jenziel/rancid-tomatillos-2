@@ -18,7 +18,7 @@
 
 .back-to-main-btn {
   font-size: 2rem;
-  margin-top: 5vh;
+  margin-top: 12vh;
   margin-left: 5vw;
   background-color: rgba(0,0,0,.7);
   color: white;
@@ -31,7 +31,7 @@
     justify-content: space-evenly;
     align-items: center; 
     margin-bottom: 40vh;
-    margin-top: 20vh;
+    margin-top: 12vh;
 }
 
 .movie-info{
