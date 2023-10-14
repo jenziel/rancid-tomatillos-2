@@ -2,6 +2,7 @@ import './App.css'
 import movieData from '../../movieData'
 import { useState } from 'react'
 import MoviesContainer from '../MoviesContainer/MoviesContainer'
+import Header from '../Header/Header'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <MoviesContainer allMovies={allMovies.movies} />
     </div>
   );
