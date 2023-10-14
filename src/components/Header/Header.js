@@ -4,7 +4,7 @@ function Header() {
 
     return (
         <header>
-            I AM HEADER
+            <h1>RANCID TOMATILLOS 🍅</h1>
         </header>
     )
 }
