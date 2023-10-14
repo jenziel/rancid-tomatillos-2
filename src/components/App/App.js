@@ -16,8 +16,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <MoviesContainer allMovies={allMovies.movies} />
+      <div className='header'>
+        <Header />
+      </div>
+      <div className='movies-container'>
+        <MoviesContainer allMovies={allMovies.movies} />
+      </div>
     </div>
   );
 }
