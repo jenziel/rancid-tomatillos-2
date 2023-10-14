@@ -10,19 +10,10 @@ function App() {
   const [serverError, setServerError] = useState({hasError: false, message:''})
   const [selectedMovie, setSelectedMovie] = useState(null)
 
-    useEffect(() => {
-      if (selectedMovie){
-        console.log('the selected movie is', `${selectedMovie.title}`)
-      }
-      else {
-        console.log('no movie is currently selected')
-      }
-    }, [selectedMovie])
   const showMovieDetails = (id) =>{
     const foundMovie = allMovies.movies.find(movie => {
       return movie.id === id
     })
-    console.log(foundMovie, 'foundMovie')
     setSelectedMovie(foundMovie)
   }
 
