@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: rgba(52,53,65, .8);
 }
 
 .header {
@@ -9,12 +8,6 @@
 
 .movies-container {
   background-color: rgba(52,53,65, .8)
-}
-
-body, html {
-  height: 100%;
-  width: 100%;
-  background-color: rgb(50, 50, 50);
 }
 
 

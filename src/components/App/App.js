@@ -26,12 +26,9 @@ function App() {
     setSelectedMovie(null)
   }
   
-  // if selectedMovie exists, then don't render the MoviesContainer, and DO render the MovieDetails page.
   return (
     <div className="App">
-      <div className='header'>
         <Header />
-      </div>
       { !selectedMovie ? (
         <div className='movies-container'>
           <MoviesContainer allMovies={allMovies.movies} showMovieDetails={showMovieDetails}/> 
