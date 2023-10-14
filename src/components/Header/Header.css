@@ -1,0 +1,6 @@
+header {
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(52,53,65, .4);
+}
