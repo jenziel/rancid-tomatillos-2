@@ -1,0 +1,22 @@
+header {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: rgba(0, 0, 0);
+    opacity: .72; */
+    background-color: rgba(52,53,65, .81)
+}
+
+h1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #b53f3f;
+    text-shadow:
+    0 0 5px #fff,
+    0 0 7px #fff,
+    0 0 14px #fff,
+    0 0 28px rgb(233, 20, 80),
+    0 0 56px rgb(233, 20, 80),
+    0 0 64px rgb(233, 20, 80),
+    0 0 72px rgb(233, 20, 80),
+    0 0 106px rgb(233, 20, 80);
+}

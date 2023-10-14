@@ -3,6 +3,7 @@ import movieData from '../../movieData'
 import SelectedMovie from '../SelectedMovie/SelectedMovie'
 import { useState, useEffect } from 'react'
 import MoviesContainer from '../MoviesContainer/MoviesContainer'
+import Header from '../Header/Header'
 
 function App() {
 
@@ -28,8 +29,13 @@ function App() {
   // if selectedMovie exists, then don't render the MoviesContainer, and DO render the MovieDetails page.
   return (
     <div className="App">
+      <div className='header'>
+        <Header />
+      </div>
       { !selectedMovie ? (
-        <MoviesContainer allMovies={allMovies.movies} showMovieDetails={showMovieDetails}/> 
+        <div className='movies-container'>
+          <MoviesContainer allMovies={allMovies.movies} showMovieDetails={showMovieDetails}/> 
+        </div>
       ): (
         <SelectedMovie selectedMovie={selectedMovie} resetSelectedMovie={resetSelectedMovie}/>
       )
