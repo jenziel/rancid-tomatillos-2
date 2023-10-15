@@ -10,11 +10,11 @@ function App() {
   const [allMovies, setAllMovies] = useState([])
   const [serverError, setServerError] = useState('')
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const [selectedTrailer, setSelectedTrailer] = useState('')
 
   useEffect(()=>{
     getMovies()
     .then(data => {
-      console.log('data', data)
       return setAllMovies(data.movies)
     })
     .catch(error => {
@@ -22,18 +22,9 @@ function App() {
     })
   }, [])
 
-  useEffect(() => {
-    console.log(` There are ${allMovies.length} items in allMovies array.`)
-  }, [allMovies])
-
-  useEffect(()=>{
-    console.log(`current error state is: ${serverError}`)
-  })
-
   const showMovieDetails = (id) => {
     getSelectedMovie(id)
     .then(data => {
-      console.log('selected movie', data.movie)
       setSelectedMovie(data.movie)
     })
     .catch(error => {

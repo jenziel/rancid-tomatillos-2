@@ -27,4 +27,6 @@ export function getSelectedTrailer(id){
         }
         return response.json()
     })
+    .then(data => data.videos.find(video => video.type === 'Trailer'))
+    .then(video => video.key)
 }
