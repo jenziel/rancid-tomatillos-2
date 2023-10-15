@@ -10,7 +10,7 @@ function App() {
   const [allMovies, setAllMovies] = useState([])
   const [serverError, setServerError] = useState('')
   const [selectedMovie, setSelectedMovie] = useState(null)
-  const [selectedTrailer, setSelectedTrailer] = useState('')
+  const [selectedTrailerKey, setSelectedTrailerKey] = useState('')
 
   useEffect(()=>{
     getMovies()
@@ -32,6 +32,13 @@ function App() {
     })
   }
 
+  const showYoutubeVideo = (id) => {
+    getSelectedTrailer(id)
+    .then(data => {
+      setSelectedTrailerKey(data)
+    })
+  }
+
   const resetError = () => {
     setServerError('')
   }
@@ -45,14 +52,14 @@ function App() {
         <Header />
       { !selectedMovie ? (
         <div className='movies-container'>
-          <MoviesContainer allMovies={allMovies} showMovieDetails={showMovieDetails}/> 
+          <MoviesContainer allMovies={allMovies} showMovieDetails={showMovieDetails} showYoutubeVideo={showYoutubeVideo} /> 
         </div>
       ): (
-        <SelectedMovie selectedMovie={selectedMovie} resetSelectedMovie={resetSelectedMovie}/>
+        <SelectedMovie selectedMovie={selectedMovie} selectedTrailerKey={selectedTrailerKey} resetSelectedMovie={resetSelectedMovie}/>
       )
       }
     </div>
-  );
+  )
 }
 
 export default App
