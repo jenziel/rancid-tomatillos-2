@@ -1,7 +1,7 @@
 import './MoviesContainer.css'
 import MovieCard from '../MovieCard/MovieCard'
 
-function MoviesContainer({ allMovies, showMovieDetails }) {
+function MoviesContainer({ allMovies, showMovieDetails, showYoutubeVideo, selectedTrailerKey }) {
     const movieCards = allMovies.map(movie => {
         return (
                 <MovieCard 
@@ -10,7 +10,9 @@ function MoviesContainer({ allMovies, showMovieDetails }) {
                     key={movie.id}
                     id={movie.id}
                     showMovieDetails={showMovieDetails}
+                    showYoutubeVideo={showYoutubeVideo}
                     backdrop_path={movie.backdrop_path}
+                    selectedTrailerKey={selectedTrailerKey}
                 />
         )
     })
