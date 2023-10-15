@@ -1,25 +1,39 @@
 import './App.css'
-import movieData from '../../movieData'
 import SelectedMovie from '../SelectedMovie/SelectedMovie'
 import { useState, useEffect } from 'react'
 import MoviesContainer from '../MoviesContainer/MoviesContainer'
 import Header from '../Header/Header'
+import {getMovies, getSelectedMovie, getSelectedTrailer} from '../../apiCalls'
 
 function App() {
 
-  const [allMovies, setAllMovies] = useState(movieData)
-  const [serverError, setServerError] = useState({hasError: false, message:''})
+  const [allMovies, setAllMovies] = useState([])
+  const [serverError, setServerError] = useState('')
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const [selectedTrailer, setSelectedTrailer] = useState('')
 
-  const showMovieDetails = (id) =>{
-    const foundMovie = allMovies.movies.find(movie => {
-      return movie.id === id
+  useEffect(()=>{
+    getMovies()
+    .then(data => {
+      return setAllMovies(data.movies)
     })
-    setSelectedMovie(foundMovie)
+    .catch(error => {
+      setServerError(`${error.message}`)
+    })
+  }, [])
+
+  const showMovieDetails = (id) => {
+    getSelectedMovie(id)
+    .then(data => {
+      setSelectedMovie(data.movie)
+    })
+    .catch(error => {
+      setServerError(`${error.message}`)
+    })
   }
 
   const resetError = () => {
-    setServerError({hasError: false, message: ''})
+    setServerError('')
   }
   
   const resetSelectedMovie = () => {
@@ -31,7 +45,7 @@ function App() {
         <Header />
       { !selectedMovie ? (
         <div className='movies-container'>
-          <MoviesContainer allMovies={allMovies.movies} showMovieDetails={showMovieDetails}/> 
+          <MoviesContainer allMovies={allMovies} showMovieDetails={showMovieDetails}/> 
         </div>
       ): (
         <SelectedMovie selectedMovie={selectedMovie} resetSelectedMovie={resetSelectedMovie}/>

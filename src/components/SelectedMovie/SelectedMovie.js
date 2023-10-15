@@ -1,7 +1,7 @@
 import "./SelectedMovie.css";
 
 function SelectedMovie({ selectedMovie, resetSelectedMovie }) {
-  const { backdrop_path, poster_path, title, release_date, average_rating } =
+  const { backdrop_path, poster_path, title, release_date, overview, genres, runtime, average_rating } =
     selectedMovie;
   const dayjs = require("dayjs");
   return (
@@ -24,15 +24,12 @@ function SelectedMovie({ selectedMovie, resetSelectedMovie }) {
         <div className='movie-info'>
           <h1 className='movie-title'>{selectedMovie.title}, {dayjs(release_date).format("YYYY")}</h1>
 
-          <div className='runtime info'>120 minutes</div>
+          <div className='runtime info'>{runtime} minutes</div>
           <div className='overview info'>
-            Nearly 5,000 years after he was bestowed with the almighty powers of
-            the Egyptian gods—and imprisoned just as quickly—Black Adam is freed
-            from his earthly tomb, ready to unleash his unique form of justice
-            on the modern world.
+            {overview}
           </div>
-          <div className='avg-rating info'>Average Rating: {average_rating.toFixed()}/10</div>
-          <div className='genres info'>Action • Fantasy • Science Fiction</div>
+          <div className='avg-rating info'>Average Rating: {average_rating.toFixed()}/10 🍅</div>
+          <div className='genres info'>{genres.join(' • ')}</div>
         </div>
         <div className='movie-trailer'>
           <p>video placeholder box</p>
