@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import MoviesContainer from '../MoviesContainer/MoviesContainer'
 import Header from '../Header/Header'
 import {getMovies, getSelectedMovie, getSelectedTrailer} from '../../apiCalls'
-
+import {Routes, Route} from 'react-router-dom'
 function App() {
 
   const [allMovies, setAllMovies] = useState([])
