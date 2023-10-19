@@ -48,6 +48,7 @@ function App() {
     })
   }
 
+
   const resetError = () => {
     setServerError("");
   };
@@ -91,7 +92,7 @@ function App() {
         </Routes>
       )}
     </div>
-  );
+  )
 }
 
 export default App;

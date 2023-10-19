@@ -10,8 +10,8 @@ function MoviesContainer({ allMovies, showMovieDetails, showYoutubeVideo, select
                     key={movie.id}
                     id={movie.id}
                     showMovieDetails={showMovieDetails}
-                    backdrop_path={movie.backdrop_path}
                     showYoutubeVideo={showYoutubeVideo}
+                    backdrop_path={movie.backdrop_path}
                     selectedTrailerKey={selectedTrailerKey}
                 />
         )
