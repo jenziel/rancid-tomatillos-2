@@ -17,7 +17,9 @@ function MoviesContainer({ allMovies, showMovieDetails, showYoutubeVideo, select
         )
     })
     return (
-        <div className='cards-container'>{movieCards}</div>
+        <div className='movies-container'>
+            <div className='cards-container'>{movieCards}</div>
+        </div>
     )
 }
 
