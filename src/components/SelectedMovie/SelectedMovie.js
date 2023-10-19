@@ -5,10 +5,8 @@ import Loading from "../Loading/Loading";
 
 function SelectedMovie({ selectedMovie, allMovies, resetSelectedMovie, setIsLoading, selectedTrailerKey }) {
   const { id } = useParams();
-  console.log('selected trailer key', selectedTrailerKey)
 
   const dayjs = require("dayjs");
-
 
   const idAsNumber = parseInt(id);
 
