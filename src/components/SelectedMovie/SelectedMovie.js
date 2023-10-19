@@ -6,17 +6,10 @@ import {useState, useEffect} from "react"
 
 function SelectedMovie({ selectedMovie, allMovies, resetSelectedMovie, setIsLoading, selectedTrailerKey }) {
   const { id } = useParams();
-  const [selectedMovie2, setSelectedMovie2] = useState(null)
 
   useEffect(()=>{
     setSelectedMovie2(selectedMovie)
   }, [])
-
-    useEffect(()=>{  
-      console.log(`selected movie is now  ${selectedMovie2}`)
-      console.log(selectedMovie2)
-    }, [selectedMovie2])
-  const dayjs = require("dayjs");
 
   const idAsNumber = parseInt(id);
 
