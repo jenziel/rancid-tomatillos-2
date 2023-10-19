@@ -27,6 +27,15 @@ export function getSelectedTrailer(id){
         }
         return response.json()
     })
-    .then(data => data.videos.find(video => video.type === 'Trailer'))
-    .then(video => video.key)
+    .then(data => {
+        const trailerVideo = data.videos.find(video => video.type === 'Trailer')
+        if (!trailerVideo) {
+            return null
+        }
+        return trailerVideo.key
+    })
+    .catch(error => {
+        console.error('Error fetching trailer:', error) 
+        return null
+})
 }
