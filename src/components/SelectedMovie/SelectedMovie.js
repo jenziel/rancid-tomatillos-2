@@ -1,11 +1,21 @@
 import "./SelectedMovie.css";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, } from "react-router-dom";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import Loading from "../Loading/Loading";
+import {useState, useEffect} from "react"
 
 function SelectedMovie({ selectedMovie, allMovies, resetSelectedMovie, setIsLoading, selectedTrailerKey }) {
   const { id } = useParams();
+  const [selectedMovie2, setSelectedMovie2] = useState(null)
 
+  useEffect(()=>{
+    setSelectedMovie2(selectedMovie)
+  }, [])
+
+    useEffect(()=>{  
+      console.log(`selected movie is now  ${selectedMovie2}`)
+      console.log(selectedMovie2)
+    }, [selectedMovie2])
   const dayjs = require("dayjs");
 
   const idAsNumber = parseInt(id);
@@ -54,7 +64,7 @@ function SelectedMovie({ selectedMovie, allMovies, resetSelectedMovie, setIsLoad
             </div>
             {selectedTrailerKey && (
             <div className='movie-trailer'>
-              <iframe className='trailer' title={`embedded youtube trailer for the movie titled ${selectedMovie.title}`} width='560' height='315' src={`https://www.youtube-nocookie.com/embed/${selectedTrailerKey}`} />
+              <iframe className='trailer'  width='560' height='315' title={`embedded youtube trailer for the movie titled ${selectedMovie.title}`} width='560' height='315' src={`https://www.youtube-nocookie.com/embed/${selectedTrailerKey}`} />
             </div>
             )}
           </div>
