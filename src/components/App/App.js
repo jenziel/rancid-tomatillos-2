@@ -12,12 +12,14 @@ import { Routes, Route } from "react-router-dom";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import Loading from "../Loading/Loading";
 
+
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [serverError, setServerError] = useState({hasError: false, message: ''})
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedTrailerKey, setSelectedTrailerKey] = useState('');
   const [isLoading, setIsLoading] = useState(true)
+
 
   useEffect(() => {
     getMovies()
@@ -27,10 +29,12 @@ function App() {
       .then(() => setIsLoading(false))
       .catch((error) => {
         setServerError({hasError: true, message: `${error.message}`});
+
       });
   }, []);
 
   const showMovieDetails = (id) => {
+    setIsLoading(true)
     getSelectedMovie(id)
       .then((data) => {
         setSelectedMovie(data.movie);
@@ -51,6 +55,7 @@ function App() {
     });
   }
 
+
   const resetError = () => {
     setServerError({hasError: false, message: ''});
   };
@@ -62,7 +67,11 @@ function App() {
   return (
     <div className='App'>
       <Header resetError={resetError} />
-      {serverError.hasError && <ErrorComponent serverError={serverError} resetError={resetError} />}
+      {serverError.hasError ? (
+        <ErrorComponent serverError={serverError} resetError={resetError} />
+      ) : isLoading ? (
+        <Loading />
+      ):(
         <Routes>
           <Route
             path='/'
@@ -90,6 +99,11 @@ function App() {
           ></Route>
           <Route path='*' element={<ErrorComponent resetError={resetError} />} />
         </Routes>
+              />
+            }
+          ></Route>
+        </Routes>
+      )}
     </div>
   )
 }
