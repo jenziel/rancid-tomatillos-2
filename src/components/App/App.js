@@ -98,12 +98,7 @@ function App() {
             }
           ></Route>
           <Route path='*' element={<ErrorComponent resetError={resetError} />} />
-        </Routes>
-              />
-            }
-          ></Route>
-        </Routes>
-      )}
+        </Routes>)}
     </div>
   )
 }
