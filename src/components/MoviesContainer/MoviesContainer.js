@@ -1,9 +1,11 @@
 import './MoviesContainer.css'
 import MovieCard from '../MovieCard/MovieCard'
+import { Link } from 'react-router-dom'
 
 function MoviesContainer({ allMovies, showMovieDetails, showYoutubeVideo, selectedTrailerKey }) {
     const movieCards = allMovies.map(movie => {
         return (
+            <Link to={`/${movie.id}`} key={movie.id}>
                 <MovieCard 
                     title={movie.title}
                     poster_path={movie.poster_path}
@@ -14,10 +16,13 @@ function MoviesContainer({ allMovies, showMovieDetails, showYoutubeVideo, select
                     backdrop_path={movie.backdrop_path}
                     selectedTrailerKey={selectedTrailerKey}
                 />
+            </Link>
         )
     })
     return (
-        <div className='cards-container'>{movieCards}</div>
+        <div className='movies-container'>
+            <div className='cards-container'>{movieCards}</div>
+        </div>
     )
 }
 
