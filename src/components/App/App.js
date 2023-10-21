@@ -12,6 +12,8 @@ import { Routes, Route } from "react-router-dom";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import Loading from "../Loading/Loading";
 
+
+
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [serverError, setServerError] = useState("");

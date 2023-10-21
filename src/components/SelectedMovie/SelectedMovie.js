@@ -4,12 +4,11 @@ import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import Loading from "../Loading/Loading";
 import {useState, useEffect} from "react"
 
+
+
 function SelectedMovie({ selectedMovie, allMovies, resetSelectedMovie, setIsLoading, selectedTrailerKey }) {
   const { id } = useParams();
-
-  useEffect(()=>{
-    setSelectedMovie2(selectedMovie)
-  }, [])
+  const dayjs = require("dayjs");
 
   const idAsNumber = parseInt(id);
 
