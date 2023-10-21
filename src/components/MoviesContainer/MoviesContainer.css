@@ -5,3 +5,7 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   padding-top: 8%;
 }
+
+.cards-container {
+  background-color: rgba(52,53,65, .8)
+}
