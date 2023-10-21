@@ -13,21 +13,23 @@ import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import Loading from "../Loading/Loading";
 
 
-
 function App() {
   const [allMovies, setAllMovies] = useState([]);
-  const [serverError, setServerError] = useState("");
+  const [serverError, setServerError] = useState({hasError: false, message: ''})
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedTrailerKey, setSelectedTrailerKey] = useState('');
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+
 
   useEffect(() => {
     getMovies()
       .then((data) => {
         return setAllMovies(data.movies);
       })
+      .then(() => setIsLoading(false))
       .catch((error) => {
-        setServerError(`${error.message}`);
+        setServerError({hasError: true, message: `${error.message}`});
+
       });
   }, []);
 
@@ -39,7 +41,7 @@ function App() {
       })
       .then(() => setIsLoading(false))
       .catch((error) => {
-        setServerError(`${error.message}`);
+        setServerError({hasError: true, message: `${error.message}`});
       });
   };
 
@@ -48,11 +50,14 @@ function App() {
     .then(data => {
       setSelectedTrailerKey(data)
     })
+    .catch((error) => {
+      setServerError({hasError: true, message: `${error.message}`});
+    });
   }
 
 
   const resetError = () => {
-    setServerError("");
+    setServerError({hasError: false, message: ''});
   };
 
   const resetSelectedMovie = () => {
@@ -61,9 +66,9 @@ function App() {
 
   return (
     <div className='App'>
-      <Header />
-      {serverError ? (
-        <ErrorComponent />
+      <Header resetError={resetError} />
+      {serverError.hasError ? (
+        <ErrorComponent serverError={serverError} resetError={resetError} />
       ) : isLoading ? (
         <Loading />
       ):(
@@ -71,15 +76,15 @@ function App() {
           <Route
             path='/'
             element={
-              <MoviesContainer
-                allMovies={allMovies}
-                showMovieDetails={showMovieDetails}
-                showYoutubeVideo={showYoutubeVideo}
+              <MoviesContainer 
+                allMovies={allMovies} 
+                showMovieDetails={showMovieDetails} 
+                showYoutubeVideo={showYoutubeVideo} 
+                setServerError={setServerError}
               />
-            }
-          ></Route>
+            }></Route>
           <Route
-            path='/movies/:id'
+            path='/:id'
             element={
               <SelectedMovie
                 allMovies = {allMovies}
@@ -88,6 +93,12 @@ function App() {
                 selectedTrailerKey={selectedTrailerKey}
                 resetSelectedMovie={resetSelectedMovie}
                 setIsLoading={setIsLoading}
+                setServerError={setServerError}
+              />
+            }
+          ></Route>
+          <Route path='*' element={<ErrorComponent resetError={resetError} />} />
+        </Routes>
               />
             }
           ></Route>

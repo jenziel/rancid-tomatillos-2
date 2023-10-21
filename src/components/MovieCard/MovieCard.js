@@ -1,13 +1,8 @@
 import "./MovieCard.css";
-import { Link } from "react-router-dom";
 
-function MovieCard({ poster_path, title, showMovieDetails, id, showYoutubeVideo }) {
+function MovieCard({ poster_path, title, id }) {
   return (
-    <div className='card' onClick={() => {
-        showMovieDetails(id)
-        showYoutubeVideo(id)
-    }}>
-      <Link to={`/movies/${id}`}>
+    <div className='card'>
         <img
           src={poster_path}
           className='movie-poster'
@@ -15,7 +10,6 @@ function MovieCard({ poster_path, title, showMovieDetails, id, showYoutubeVideo 
           key={id}
           id={id}
         />
-      </Link>
     </div>
   );
 }
