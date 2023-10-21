@@ -2,7 +2,7 @@ export function getMovies(){
     return fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => {
         if(!response.ok) {
-            throw new Error(`${response.statusText}`)
+            throw new Error(`Movies not found.`)
         }
         return response.json()
     })
@@ -12,7 +12,7 @@ export function getSelectedMovie(id){
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     .then(response => {
         if(!response.ok) {
-            throw new Error(`${response.statusText}`)
+            throw new Error(`Movie not found.`)
         }
         return response.json()
     })
@@ -22,7 +22,7 @@ export function getSelectedTrailer(id) {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`${response.statusText}`)
+                throw new Error(`Trailer not found.`)
             }
             return response.json()
         })
