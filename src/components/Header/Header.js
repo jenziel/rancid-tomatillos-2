@@ -6,7 +6,7 @@ function Header( { resetError } ) {
     return (
         <header className='rancid-title'>
          <Link to={`/`} style={{color: `inherit`, textDecoration: `inherit`}} onClick={() => {resetError()}} >
-            <h1>RANCID TOMATILLOS 🍅</h1>
+            <h1 className='header-text'>RANCID TOMATILLOS 🍅</h1>
          </Link>
         </header>
     )
