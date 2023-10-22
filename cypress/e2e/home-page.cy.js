@@ -36,15 +36,6 @@ describe("home page user flow", () => {
             .should('eq', 'https://image.tmdb.org/t/p/original//ps2oKfhY6DL3alynlSqY97gHSsg.jpg')
     })
 
-    it('should update url to clicked movie details', () => {
-        cy.get('.card').first().click()
-        .url().should('eq', 'http://localhost:3000/436270')
-
-        cy.visit('http://localhost:3000')
-        cy.get('.card').last().click()
-        .url().should('eq', 'http://localhost:3000/934641')
-    })
-
     it('should display an error message for 500 error', () => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
             statusCode: 500,

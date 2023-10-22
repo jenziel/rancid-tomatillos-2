@@ -1,0 +1,16 @@
+{
+  "movie": {
+    "id": 934641,
+    "title": "The Minute You Wake Up Dead",
+    "poster_path": "https://image.tmdb.org/t/p/original//pUPwTbnAqfm95BZjNBnMMf39ChT.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//sP1ShE4BGLkHSRqG9ZeGHg6C76t.jpg",
+    "release_date": "2022-11-04",
+    "overview": "A stockbroker in a small southern town gets embroiled in an insurance scam with a next-door neighbor that leads to multiple murders when a host of other people want in on the plot. Sheriff Thurmond Fowler, the by-the-book town sheriff for over four decades, works earnestly to try and unravel the town’s mystery and winds up getting more than he bargained for.",
+    "genres": ["Thriller", "Crime"],
+    "budget": 0,
+    "revenue": 0,
+    "runtime": 90,
+    "tagline": "Don't trust a soul.",
+    "average_rating": 5
+  }
+}
