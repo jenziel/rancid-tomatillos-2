@@ -9,7 +9,6 @@ function ErrorComponent({ serverError, resetError }) {
             <p>Uh oh! {serverError.message}</p> 
             <Link to={'/'} onClick={() => {resetError()}} style={{color: `inherit`, textDecoration: `inherit`}}>
                 <button>Return to Home</button>
-                {/* Please CLICK HERE to return home"</p> */}
             </Link>
         </div>
     )

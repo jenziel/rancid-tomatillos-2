@@ -1,25 +1,24 @@
 .card {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
-    transition: transform 0.3s;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
 
-  .card:hover {
-    cursor: pointer;
-    transform: scale(1.10);
-  }
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 
-  .movie-poster {
-    height: 250px;
-  }
-  /* mobile devices */
+.movie-poster {
+  height: 250px;
+}
+
+/* mobile devices */
 @media screen and (max-width: 35em) {
-  .card {
-  }
   .movie-poster {
     height: 26em;
   }
