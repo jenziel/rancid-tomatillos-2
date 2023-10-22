@@ -1,6 +1,7 @@
 import "./MoviesContainer.css";
 import MovieCard from "../MovieCard/MovieCard";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function MoviesContainer({
   allMovies,
@@ -32,3 +33,16 @@ function MoviesContainer({
 }
 
 export default MoviesContainer;
+
+MoviesContainer.propTypes = {
+  allMovies: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  showMovieDetails: PropTypes.func.isRequired,
+  showYoutubeVideo: PropTypes.func.isRequired,
+  selectedTrailerKey: PropTypes.string,
+};

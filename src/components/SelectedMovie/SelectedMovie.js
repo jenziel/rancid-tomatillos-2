@@ -2,6 +2,7 @@ import "./SelectedMovie.css";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getSelectedMovie, getSelectedTrailer } from "../../apiCalls";
+import PropTypes from 'prop-types';
 
 function SelectedMovie({
   selectedMovie,
@@ -87,3 +88,19 @@ function SelectedMovie({
 }
 
 export default SelectedMovie;
+
+SelectedMovie.propTypes = {
+    selectedMovie: PropTypes.shape({
+      backdrop_path: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string,
+      overview: PropTypes.string,
+      average_rating: PropTypes.number,
+      release_date: PropTypes.string,
+      genres: PropTypes.arrayOf(PropTypes.string),
+      runtime: PropTypes.number,
+    }),
+    resetSelectedMovie: PropTypes.func.isRequired,
+    selectedTrailerKey: PropTypes.string,
+    setServerError: PropTypes.func.isRequired,
+};
