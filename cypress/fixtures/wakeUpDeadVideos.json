@@ -1,0 +1,19 @@
+{
+    "videos": [
+      {
+        "id": 65,
+        "movie_id": 934641,
+        "key": "4OT6fzXBG3Y",
+        "site": "YouTube",
+        "type": "Clip"
+      },
+      {
+        "id": 66,
+        "movie_id": 934641,
+        "key": "vv7XswnfSMk",
+        "site": "YouTube",
+        "type": "Trailer"
+      }
+    ]
+  }
+  
