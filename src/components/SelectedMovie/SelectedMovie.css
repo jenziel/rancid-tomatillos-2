@@ -2,47 +2,59 @@
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- overflow-x: hidden;
- overflow-y: hidden;
- color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: white;
+  font-size: 2rem;
+  padding-top: 15vh;
 }
 
-.button-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 5vh;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .back-to-main-btn {
   font-size: 2rem;
-  margin-top: 12vh;
+  margin-top: 30vh;
   margin-left: 5vw;
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   cursor: pointer;
-}
-
-.info-and-video-container{
+    height: 1.5em;
+    width: 2em;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center; 
-    margin-bottom: 40vh;
-    margin-top: 12vh;
+    justify-content: center;
+    align-items:center;
+    border-radius: 16%;
 }
 
-.movie-info{
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: rgba(0,0,0,.7);
-    height: auto;
-    padding: 2rem;
-    width: 40vw;
+.info-and-video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 40vh;
+  margin-top: 12vh;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: auto;
+  padding: 2rem;
+  width: 40vw;
+  border-radius: 3%;
 }
 
 .movie-title {
@@ -52,10 +64,9 @@
 }
 
 .info {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
-
 
 .overview {
   text-align: left;
@@ -63,5 +74,63 @@
 
 .movie-trailer {
   font-size: 2rem;
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* larger screens */
+@media screen and (max-width: 1070px) {
+  .selected-movie {
+    overflow-y: scroll;
+  }
+
+  .info-and-video-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+  }
+  .movie-info {
+    width: 520px;
+    margin-bottom: 5vh;
+  }
+}
+
+/* ipad screen size */
+@media screen and (max-width: 820px) {
+  .trailer {
+   width: 85vw;
+  }
+
+  
+  .movie-info {
+    width:85vw;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button-container{
+    width: 520px;
+  }
+}
+
+/* mobile devices */
+@media screen and (max-width: 379px) {
+.selected-movie{
+  padding-top: 20vh;
+}
+  .info-and-video-container {
+    flex-direction: column;
+    margin-top: 2vh;
+    margin-bottom: 10vh;
+  }
+
+  .movie-info {
+    width: 80vw;
+    margin-bottom: 2vh;
+  }
+  .trailer {
+    width: 90vw;
+    height: 40vh;
+  }
 }

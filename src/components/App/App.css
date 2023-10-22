@@ -1,6 +1,13 @@
+html {
+  font-size: 62.5%;
+  width: 100vw;
+}
+
 .App {
   text-align: center;
 }
+
+
 
 .header {
   height: 10%;
@@ -8,4 +15,16 @@
 
 .movies-container {
   background-color: rgba(52,53,65, .8)
+}
+/* mobile devices */
+@media screen and (max-width: 37.5em) {
+ 
+  .movies-container {
+    width: 100vw;
+    background-color: rgba(52,53,65, .8)
+  }
+  .cards-container {
+    width: 100%;
+  }
+  
 }

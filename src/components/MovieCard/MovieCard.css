@@ -16,3 +16,12 @@
   .movie-poster {
     height: 250px;
   }
+  /* mobile devices */
+@media screen and (max-width: 35em) {
+  .card {
+    /* justify-content: flex-start; */
+  }
+  .movie-poster {
+    height: 26em;
+  }
+}
