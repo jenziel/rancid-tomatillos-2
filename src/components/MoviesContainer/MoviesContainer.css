@@ -1,11 +1,44 @@
+.movies-container {
+  background-color: rgba(52, 53, 65, 0.8);
+}
+
 .cards-container {
   padding: 5vh;
   display: grid;
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   padding-top: 8%;
+  background-color: rgba(52, 53, 65, 0.8);
 }
 
-.cards-container {
-  background-color: rgba(52,53,65, .8)
+/* larger screens */
+@media screen and (min-width: 1000px) {
+  .cards-container {
+    padding-top: 15vh;
+  }
+}
+
+/* ipad screen size */
+@media screen and (max-width: 1000px) {
+  .cards-container {
+    padding-top: 15vh;
+  }
+}
+
+/* mobile devices */
+@media screen and (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 0em;
+    display: grid;
+    grid-gap: 0.7em;
+    padding-top: 15vh;
+  }
+}
+
+/* mobile devices */
+@media screen and (max-width: 380px) {
+  .cards-container {
+    padding-top: 20vh;
+  }
 }
