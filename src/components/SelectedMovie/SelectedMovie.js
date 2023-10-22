@@ -47,7 +47,7 @@ function SelectedMovie({ selectedMovie, allMovies, resetSelectedMovie, setIsLoad
           }}
         >
           <div className='button-container'>
-            <Link to='/'>
+            <Link to='/' style={{color: `inherit`, textDecoration: `inherit`}}>
             <button
               className='back-to-main-btn'
               onClick={() => resetSelectedMovie()}

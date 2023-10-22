@@ -5,9 +5,11 @@ function ErrorComponent({ serverError, resetError }) {
 
     return (
         <div className="serverError">
-            <img className='error-image' src='https://www.lynnmumbingmejia.com/wp-content/uploads/2022/10/minion-example.png' /> <br />
+            <img className='error-image' src='https://www.lynnmumbingmejia.com/wp-content/uploads/2022/10/minion-example.png' /> 
+            <p>Uh oh! {serverError.message}</p> 
             <Link to={'/'} onClick={() => {resetError()}} style={{color: `inherit`, textDecoration: `inherit`}}>
-                <p>"Uh oh! {serverError.message} <br/> Please CLICK HERE to return home"</p>
+                <button>Return to Home</button>
+                {/* Please CLICK HERE to return home"</p> */}
             </Link>
         </div>
     )

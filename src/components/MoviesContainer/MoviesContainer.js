@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function MoviesContainer({ allMovies, showMovieDetails, showYoutubeVideo, selectedTrailerKey }) {
     const movieCards = allMovies.map(movie => {
         return (
-            <Link to={`/${movie.id}`} key={movie.id}>
+            <Link to={`/${movie.id}`} key={movie.id} >
                 <MovieCard 
                     title={movie.title}
                     poster_path={movie.poster_path}

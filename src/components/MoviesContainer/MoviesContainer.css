@@ -4,11 +4,10 @@
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   padding-top: 8%;
+  background-color: rgba(52,53,65, .8)
+  
 }
 
-.cards-container {
-  background-color: rgba(52,53,65, .8)
-}
 
 /* larger screens */
 @media screen and (min-width: 1000px){
